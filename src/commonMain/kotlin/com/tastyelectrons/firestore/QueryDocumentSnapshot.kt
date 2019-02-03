@@ -1,0 +1,3 @@
+package com.tastyelectrons.firestore
+
+expect class QueryDocumentSnapshot: DocumentSnapshot

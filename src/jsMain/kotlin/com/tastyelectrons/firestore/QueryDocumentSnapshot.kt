@@ -1,0 +1,5 @@
+package com.tastyelectrons.firestore
+
+import com.tastyelectrons.firestore.external.QueryDocumentSnapshot
+
+actual class QueryDocumentSnapshot(queryDocumentSnapshot: QueryDocumentSnapshot): DocumentSnapshot(queryDocumentSnapshot)
