@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.iml" filepath="$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.commonMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.commonTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.jvmMain.iml" filepath="$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.jvmMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.tastyelectrons.firestore-kotlin-mpp.firestore-kotlin-mpp.jvmTest.iml" />
+    </modules>
+  </component>
+</project>
