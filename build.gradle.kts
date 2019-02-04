@@ -15,7 +15,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.tastyelectrons.firestore-kotlin-mpp"
+group = "com.egoossens"
 version = "0.1.0"
 
 fun ext(key: String): String = extra[key] as String
