@@ -11,7 +11,8 @@ buildscript {
 }
 
 plugins {
-    id("org.jetbrains.kotlin.multiplatform").version("1.3.20")
+    kotlin("multiplatform").version("1.3.20")
+    id("maven-publish")
 }
 
 group = "com.tastyelectrons.firestore-kotlin-mpp"
@@ -70,6 +71,29 @@ kotlin {
         }
     }
 }
+
+val javadocJar by tasks.creating(Jar::class) {
+    archiveClassifier.value("javadoc")
+    // TODO: instead of a single empty Javadoc JAR, generate real documentation for each module
+}
+
+publishing {
+    publications.withType<MavenPublication>().all {
+        artifact(javadocJar)
+    }
+}
+
+publishing {
+    repositories {
+        maven(uri("$buildDir/repo"))
+    }
+}
+
+val sourcesJar by tasks.creating(Jar::class) {
+    archiveClassifier.value("sources")
+}
+
+publishing.publications.withType<MavenPublication>().getByName("kotlinMultiplatform").artifact(sourcesJar)
 
 /* publishing {
     repositories {
