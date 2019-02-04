@@ -26,6 +26,7 @@ fun ext(key: String): String = extra[key] as String
 repositories {
     mavenCentral()
     maven("https://kotlin.bintray.com/kotlinx")
+    maven("https://jitpack.io")
 }
 
 kotlin {
@@ -75,7 +76,7 @@ kotlin {
     }
 }
 
-publishing {
+/* publishing {
     repositories {
         maven(uri("$buildDir/repo"))
     }
@@ -152,4 +153,4 @@ publishing {
         customizeForMavenCentral(pom)
         signing.sign(this)
     }
-}
+} */
