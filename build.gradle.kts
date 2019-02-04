@@ -56,7 +56,7 @@ kotlin {
                 implementation(ext("kotlin_coroutines_jvm"))
                 implementation(ext("kotlin_serialization_jvm"))
 
-                implementation(ext("firebase_admin"))
+                api(ext("firebase_admin"))
             }
         }
 
