@@ -12,7 +12,6 @@ buildscript {
 
 plugins {
     id("org.jetbrains.kotlin.multiplatform").version("1.3.20")
-    id("maven-publish")
 }
 
 group = "com.tastyelectrons.firestore-kotlin-mpp"
