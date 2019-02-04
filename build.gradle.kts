@@ -13,6 +13,7 @@ buildscript {
 plugins {
     kotlin("multiplatform").version("1.3.20")
     id("maven-publish")
+    //id("com.jfrog.bintray").version("1.8.4")
 }
 
 group = "com.tastyelectrons.firestore-kotlin-mpp"
@@ -83,21 +84,38 @@ publishing {
     }
 }
 
-publishing {
-    repositories {
-        maven(uri("$buildDir/repo"))
-    }
-}
-
 val sourcesJar by tasks.creating(Jar::class) {
     archiveClassifier.value("sources")
 }
 
-publishing.publications.withType<MavenPublication>().getByName("kotlinMultiplatform").artifact(sourcesJar)
+val kotlinMultiplatformPublication = publishing.publications.withType<MavenPublication>().getByName("kotlinMultiplatform")
+kotlinMultiplatformPublication.artifact(sourcesJar)
 
-/* publishing {
+/* bintray {
+    user = System.getenv("BINTRAY_USER")
+    key = System.getenv("BINTRAY_KEY")
+    setPublications("kotlinMultiplatform")
+    pkg = PackageConfig().apply {
+        repo = "firestore-kotlin-mpp"
+        name = "firestore-kotlin-mpp"
+        userOrg = "tastyelectrons"
+        version = VersionConfig().apply {
+            name = "0.1.0"
+        }
+    }
+} */
+
+publishing {
     repositories {
+        mavenLocal()
         maven(uri("$buildDir/repo"))
+        maven {
+            credentials {
+                username = System.getenv("BINTRAY_USER")
+                password = System.getenv("BINTRAY_KEY")
+            }
+            url = uri("https://api.bintray.com/maven/tastyelectrons/firestore-kotlin-mpp/firestore-kotlin-mpp/")
+        }
     }
 }
 
@@ -105,7 +123,7 @@ publishing.publications.withType<MavenPublication>().getByName("kotlinMultiplatf
 
 //// Add a Javadoc JAR to each publication as required by Maven Central
 
-val javadocJar by tasks.creating(Jar::class) {
+/* val javadocJar by tasks.creating(Jar::class) {
     archiveClassifier.value("javadoc")
     // TODO: instead of a single empty Javadoc JAR, generate real documentation for each module
 }
@@ -114,19 +132,12 @@ publishing {
     publications.withType<MavenPublication>().all {
         artifact(javadocJar)
     }
-}
+} */
 
 //// The root publication also needs a sources JAR as it does not have one by default
-
-val sourcesJar by tasks.creating(Jar::class) {
-    archiveClassifier.value("sources")
-}
-
-publishing.publications.withType<MavenPublication>().getByName("kotlinMultiplatform").artifact(sourcesJar)
-
 //// Customize the POMs adding the content required by Maven Central
 
-fun customizeForMavenCentral(pom: org.gradle.api.publish.maven.MavenPom) = pom.withXml {
+/* fun customizeForMavenCentral(pom: org.gradle.api.publish.maven.MavenPom) = pom.withXml {
     fun Node.add(key: String, value: String) {
         appendNode(key).setValue(value)
     }
