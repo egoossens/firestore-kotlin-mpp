@@ -1,5 +1,3 @@
-import groovy.util.Node
-
 buildscript {
     apply(from = "config.gradle.kts")
     dependencies {
@@ -14,8 +12,6 @@ buildscript {
 
 plugins {
     id("org.jetbrains.kotlin.multiplatform").version("1.3.20")
-    id("maven-publish")
-    id("signing")
 }
 
 group = "com.tastyelectrons.firestore-kotlin-mpp"
@@ -41,7 +37,6 @@ kotlin {
                 sourceMap = true
                 sourceMapEmbedSources = "always"
                 moduleKind = "commonjs"
-                outputFile = "$projectDir/dist/firestore.js"
             }
         }
     }
