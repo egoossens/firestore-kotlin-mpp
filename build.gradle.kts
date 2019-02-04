@@ -24,7 +24,7 @@ fun ext(key: String): String = extra[key] as String
 repositories {
     mavenCentral()
     maven("https://kotlin.bintray.com/kotlinx")
-    maven("https://jitpack.io")
+    //maven("https://jitpack.io")
 }
 
 kotlin {
@@ -73,7 +73,7 @@ kotlin {
     }
 }
 
-val javadocJar by tasks.creating(Jar::class) {
+/* val javadocJar by tasks.creating(Jar::class) {
     archiveClassifier.value("javadoc")
     // TODO: instead of a single empty Javadoc JAR, generate real documentation for each module
 }
@@ -107,15 +107,15 @@ kotlinMultiplatformPublication.artifact(sourcesJar)
 
 publishing {
     repositories {
-        mavenLocal()
-        maven(uri("$buildDir/repo"))
-        maven {
+        //mavenLocal()
+        //maven(uri("$buildDir/repo"))
+        /* maven {
             credentials {
                 username = System.getenv("BINTRAY_USER")
                 password = System.getenv("BINTRAY_KEY")
             }
             url = uri("https://api.bintray.com/maven/tastyelectrons/firestore-kotlin-mpp/firestore-kotlin-mpp/")
-        }
+        } */
     }
 }
 
